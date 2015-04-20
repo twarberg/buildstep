@@ -1,5 +1,7 @@
-tutum/buildstep
+twarberg/buildstep
 ===============
+
+Fork of totum/buildstep with libhunspell
 
 Base docker image to create containers from app code using Heroku's buildpacks.
 
@@ -14,10 +16,10 @@ supported.
 Usage
 -----
 
-Create a `Dockerfile` similar to the following in your application code folder 
+Create a `Dockerfile` similar to the following in your application code folder
 (this example is for a typical Django app):
 
-	FROM tutum/buildstep
+	FROM twarberg/buildstep
 	EXPOSE 8000
 	CMD ["python", "manage.py", "runserver", "8000"]
 
@@ -69,7 +71,7 @@ On-the-fly usage
 You can also make it run your application on the fly (without having to create or build a `Dockerfile`)
 by passing an environment variable `GIT_REPO` with your application's git repository URL.
 
-If your repository has a `Procfile` (or the buildpack you are using has a default `Procfile`), 
+If your repository has a `Procfile` (or the buildpack you are using has a default `Procfile`),
 you can specify the process type name as the run command.
 Otherwise, you can specify the actual command used to launch your application as the run command. For example:
 
